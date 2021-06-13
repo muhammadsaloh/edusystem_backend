@@ -1,0 +1,45 @@
+{
+  "name": "edusystem",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/server",
+    "start": "forever start src/server",
+    "restart": "forever restart src/server",
+    "stop": "forever stop src/server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muhammadyunusuz/edusystem.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/muhammadyunusuz/edusystem/issues"
+  },
+  "homepage": "https://github.com/muhammadyunusuz/edusystem#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.1",
+    "form-data": "^4.0.0",
+    "helmet": "^4.6.0",
+    "joi": "^17.4.0",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.29.1",
+    "morgan": "^1.10.0",
+    "node-fetch": "^2.6.1",
+    "pg": "^8.6.0",
+    "pg-hstore": "^2.3.3",
+    "random-number": "^0.0.9",
+    "sequelize": "^6.6.2",
+    "socket.io": "^4.1.2",
+    "swagger-ui-express": "^4.1.6"
+  }
+}
