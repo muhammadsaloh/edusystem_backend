@@ -9,7 +9,6 @@ import routes from './routes/routes.js'
 import swaggerUi from 'swagger-ui-express'
 import swaggerDocs from './swagger.js'
 import config from './config.js'
-
 import fs from 'fs/promises'
 
 
@@ -36,9 +35,12 @@ async function main () {
         next()
     })
     app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs))
-
+    app.use((req, res, next) => {
+        res.set("Access-Control-Allow-Origin", "*")
+        res.set("Access-Control-Allow-Headers", "*")
+        next()
+    })
     routes(app)
-
 
 }
 

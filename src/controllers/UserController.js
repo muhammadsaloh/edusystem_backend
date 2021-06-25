@@ -111,7 +111,8 @@ class UserController {
             await res.status(201).json({
                 ok: true,
                 message: "Code sent",
-                id: attempt.dataValues.id
+                id: attempt.dataValues.id,
+                code: attempt.dataValues.code
             })
             
         } catch (error) {
