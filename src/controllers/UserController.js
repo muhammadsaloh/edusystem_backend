@@ -2,7 +2,7 @@ import phoneValidation from "../validations/phoneValidation.js"
 import signupValidation from "../validations/signupValidation.js"
 import editProfileValidation from "../validations/editProfileValidation.js"
 import randomNumber from 'random-number'
-import sendSms from "../modules/sms.js"
+// import sendSms from "../modules/sms.js"
 import codeValidation from "../validations/codeValidation.js"
 import pkg from "sequelize"
 import moment from "moment"
@@ -11,7 +11,7 @@ import editPhotoValidation from "../validations/editPhotoValidation.js"
 import promoteUserValidation from "../validations/promoteUserValidation.js"
 const { Op } = pkg;
 
-
+console.log()
 class UserController {
     static async checkPhone (req, res) {
         try {
@@ -83,8 +83,6 @@ class UserController {
                 }
             })
             
-            console.log(ban);
-            
             if(ban) throw new Error(`You are banned until ${moment(ban.dataValues.expireDate)} `)
             
             const gen = randomNumber.generator({
@@ -106,7 +104,7 @@ class UserController {
             
             // await sendSms(data.phone, `Your code: ${attempt.dataValues.code}`)
             
-            console.log(attempt.dataValues.code);
+            // console.log(attempt.dataValues.code);
             
             await res.status(201).json({
                 ok: true,
