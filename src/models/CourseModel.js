@@ -26,9 +26,25 @@ export default async (Sequelize, sequelize) => {
             type: Sequelize.DataTypes.STRING,
             allowNull: true
         },
+        levels: {
+            type: Sequelize.DataTypes.STRING,
+            allowNull: true
+        },
+        author: {
+            type: Sequelize.DataTypes.STRING,
+            allowNull: true
+        },
+        author_photo: {
+            type: Sequelize.DataTypes.STRING,
+            allowNull: true
+        },
         is_closed: {
             type: Sequelize.DataTypes.BOOLEAN,
             defaultValue: true
+        },
+        duration: {
+            type: Sequelize.DataTypes.STRING,
+            allowNull: true
         }
     })
 }

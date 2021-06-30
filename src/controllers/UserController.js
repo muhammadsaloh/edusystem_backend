@@ -11,7 +11,6 @@ import editPhotoValidation from "../validations/editPhotoValidation.js"
 import promoteUserValidation from "../validations/promoteUserValidation.js"
 const { Op } = pkg;
 
-console.log()
 class UserController {
     static async checkPhone (req, res) {
         try {
@@ -122,7 +121,7 @@ class UserController {
     }
     static async validateCode (req, res) {
         try {
-            console.log(req.settings );
+            // console.log(req.settings );
 
             const validationId = req.headers["code-validation-id"]
             if(!validationId) throw new Error("Invalid validation token")
@@ -278,7 +277,7 @@ class UserController {
                 user_id: req.user
             })
 
-            console.log(photo);
+            // console.log(photo);
 
             await res.status(202).json({
                 ok: true,
@@ -332,7 +331,7 @@ class UserController {
 
             const user = await req.postgres.users.findOne({
                 where: {
-                    user_id: data.user_id
+                    user_id: data.user_id 
                 }
             })
 

@@ -37,7 +37,7 @@ async function postgres () {
         db.lesson_model = await LessonModel(Sequelize, sequelize)
         db.mentor_model = await MentorModel(Sequelize, sequelize)
         db.sub_model = await SubscriptionModel(Sequelize, sequelize)
-
+        
         await db.users.hasMany(db.attempts, {
             foreignKey: {
                 name: "user_id",
@@ -238,7 +238,17 @@ async function postgres () {
 
         // const { dataValues: { user_id } } = await db.users.findOne()
 
-
+        // await db.course_model.create({
+        // name: "System Administration and IT Infrastructure Services",
+        // description: "Though the gravity still dragged at him, his muscles were making great efforts to adjust. After the daily classes he no longer collapsed immediately into bed. Only the nightmares got worse.",
+        // price: 19,
+        // media: `<iframe width="560" height="315" src="https://www.youtube.com/embed/1DvTwuByjo0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`,
+        // levels: "Advanced",
+        // author: "John Doe",
+        // author_photo: "https://lh3.googleusercontent.com/proxy/wfYjqqclHT6m7DdBaB3udOdE6mFu14lI1oc2Cdln7swTl9gdbtQAcpORVyFtKwmmN1jSgP-sVEh9ixqI9UntitcV1nTGNRWzbgTFojhc7EqZWv2hiVtuQ-wQjT0X4XqjSQJz",
+        // is_closed: true,
+        // duration: "6"
+        // })
 
         await sequelize.sync({ force: false })
         
