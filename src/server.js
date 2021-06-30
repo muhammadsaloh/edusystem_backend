@@ -21,7 +21,7 @@ async function main () {
         
     const app = express()
     const server = http.createServer(app)
-    server.listen(config.PORT)
+    server.listen(config.PORT, () => console.log(`${config.PORT}`))
     
     app.use(cors())
     app.use(helmet())
