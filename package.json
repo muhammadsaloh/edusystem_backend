@@ -6,9 +6,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/server",
-    "start": "forever start src/server",
+    "start": "pm2 start src/server",
     "restart": "forever restart src/server",
-    "stop": "forever stop src/server"
+    "stop": "pm2 stop src/server"
   },
   "repository": {
     "type": "git",
